@@ -1,0 +1,57 @@
+cabal-version:      2.4
+category:           Benchmarks
+build-type:         Simple
+name:               Lambda
+synopsis:           Various implementations of lambda calculus
+version:            0.1.0
+
+
+executable sexp
+
+
+  main-is:
+    Main.hs
+
+  ghc-options:
+    -threaded -rtsopts
+
+  hs-source-dirs:
+    app/
+
+  build-depends:
+      base
+    , SExp
+    , megaparsec
+        ^>= 7.0.5
+    , text
+        ^>=1.2.3
+
+
+
+Library SExp
+
+  ghc-options:
+    -threaded 
+    -rtsopts 
+    -O2
+    -fobject-code 
+    -Wall  
+    -Wincomplete-patterns
+
+  hs-source-dirs:
+    src/
+
+  build-depends:
+      base
+    , containers
+        ^>= 0.6.2.1
+    , text
+        ^>=1.2.3
+    , megaparsec
+        ^>= 7.0.5
+
+  exposed-modules:
+      SExp.Parser
+
+  default-language:
+    Haskell2010
